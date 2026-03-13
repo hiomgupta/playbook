@@ -1,0 +1,58 @@
+/* Typography Setup - Handwritten Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+/* Optional: Local fallback (uncomment when fonts added to public/fonts/) */
+/* @font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-VariableFont_wght.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+} */
+
+/* Typography Scale */
+.font-heading-lg {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-heading);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+
+.font-heading-md {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+
+.font-heading-sm {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+
+.font-body {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  line-height: var(--line-height-normal);
+}
+
+.font-body-sm {
+  font-family: var(--font-handwritten);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: var(--line-height-normal);
+}
+
+.font-caption {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-caption);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.font-bold {
+  font-weight: 700;
+}

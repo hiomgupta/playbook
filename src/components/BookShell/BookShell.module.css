@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--page-off-white);
+  width: 100%;
+  padding: 20px;
+}
+
+.bookArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.placeholder {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  color: var(--text-light);
+  text-align: center;
+  padding: 40px;
+  max-width: 500px;
+}

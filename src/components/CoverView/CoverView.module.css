@@ -1,0 +1,193 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: var(--page-off-white);
+}
+
+.bookCover {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.coverFace {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--cover-linen);
+  filter: url(#linenTexture);
+  border-radius: 2px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.bookCover:hover .coverFace {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.coverFace::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+/* Book Spine (left edge) */
+.spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--accent-burgundy),
+    var(--cover-linen)
+  );
+  box-shadow: inset 1px 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Cover Area */
+.coverMain {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Polaroid-style label */
+.polaroid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.polaroidPhoto {
+  width: 140px;
+  height: 110px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroidLabel {
+  background: white;
+  padding: 6px 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+}
+
+.polaroidLabel:hover {
+  transform: rotate(0deg);
+  transition: transform 200ms ease-out;
+}
+
+.artistName {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.byline {
+  font-family: var(--font-handwritten);
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* Subtle "Click to open" cue */
+.cue {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-handwritten);
+  font-size: 0.875rem;
+  color: var(--text-light);
+  opacity: 0.6;
+  animation: pulse 2s ease-in-out infinite;
+  text-align: center;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Drop shadow effect */
+.shadow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15), transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* Responsive scaling */
+@media (max-width: 480px) {
+  .bookCover {
+    width: 240px;
+    height: 315px;
+  }
+
+  .polaroidPhoto {
+    width: 105px;
+    height: 82px;
+  }
+
+  .artistName {
+    font-size: 1.25rem;
+  }
+}
