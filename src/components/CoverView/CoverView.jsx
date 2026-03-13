@@ -6,10 +6,20 @@ function CoverView({ onOpen }) {
     onOpen?.()
   }, [onOpen])
 
+  const handleKeyDown = useCallback(
+    event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault()
+        onOpen?.()
+      }
+    },
+    [onOpen]
+  )
+
   return (
     <div className={styles.container}>
       {/* SVG filter for linen texture */}
-      <svg width="0" height="0">
+      <svg width="0" height="0" aria-hidden="true">
         <defs>
           <filter id="linenTexture">
             <feTurbulence
@@ -25,7 +35,14 @@ function CoverView({ onOpen }) {
       </svg>
 
       {/* Book Cover */}
-      <div className={styles.bookCover} onClick={handleClick} role="button" tabIndex={0}>
+      <div 
+        className={styles.bookCover} 
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+        role="button" 
+        tabIndex={0}
+        aria-label="Eminem - A Fan's Story. Click or press Enter to open book"
+      >
         {/* Cover with linen texture */}
         <div className={styles.coverFace}>
           {/* Book spine (left edge) */}

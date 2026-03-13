@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: var(--page-off-white);
+}
+
+.bookScaler {
+  /* Scales the entire book as a unit */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookWrapper {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  /* Important: page-flip renders a canvas inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hide the HTML pages - page-flip renders them as canvas */
+.book-page {
+  display: none;
+}
+
+/* Style the canvas that page-flip creates */
+.bookWrapper :global(canvas) {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  display: block !important;
+}
+
+/* Responsive refinements */
+@media (max-width: 1024px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+}

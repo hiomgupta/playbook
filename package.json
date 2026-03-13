@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@marvellousptc/react-pageflip": "^2.1.0",
+    "page-flip": "^2.0.7",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },

@@ -1,0 +1,150 @@
+.spread {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: var(--page-off-white);
+  border: 1px solid #d0c8b8;
+  padding: 0;
+}
+
+.leftPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-right: 1px solid #e8e0d8;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* LEFT SIDE: Image */
+.imageContainer {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f1e8 0%, #e8e0d8 100%);
+  padding: 20px;
+  text-align: center;
+}
+
+.imagePlaceholder p {
+  font-family: var(--font-handwritten);
+  font-size: 18px;
+  color: var(--text-charcoal);
+  font-weight: 700;
+}
+
+/* Caption */
+.caption {
+  text-align: center;
+  width: 100%;
+}
+
+.songTitle {
+  font-family: var(--font-handwritten);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.artist {
+  font-family: var(--font-handwritten);
+  font-size: 14px;
+  color: var(--accent-burgundy);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* RIGHT SIDE: Spotify and reflection */
+.spotifyContainer {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.spotifyEmbed {
+  max-width: 350px;
+  border-radius: 4px;
+}
+
+.reflectionContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(107, 60, 44, 0.03);
+  border-left: 3px solid var(--accent-burgundy);
+  border-radius: 4px;
+}
+
+.reflectionText {
+  font-family: var(--font-handwritten);
+  font-size: 15px;
+  color: var(--text-charcoal);
+  line-height: var(--line-height-normal);
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spread {
+    flex-direction: column;
+  }
+
+  .leftPanel {
+    border-right: none;
+    border-bottom: 1px solid #e8e0d8;
+    padding: 20px;
+  }
+
+  .rightPanel {
+    padding: 20px;
+  }
+
+  .imageContainer {
+    max-width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .spotifyEmbed {
+    max-width: 280px;
+  }
+
+  .reflectionText {
+    font-size: 13px;
+  }
+}
